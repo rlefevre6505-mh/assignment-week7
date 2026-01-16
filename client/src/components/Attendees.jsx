@@ -10,10 +10,12 @@ export default function Attendees() {
       );
       const data = await response.json();
       setAttendees(data);
-      // console.log(`attendees data: ${data}`);
+      console.log(`attendees data: ${data}`);
     }
     fetchData();
   }, []);
+
+  // const event_num = 1;
 
   return (
     <div>
