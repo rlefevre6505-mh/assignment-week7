@@ -32,29 +32,29 @@ export default function Form() {
     <>
       <h3>Post a gig</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="eventname">Band/event name</label>
+        <label htmlFor="event_name">Band/event name</label>
         <input
           type="text"
-          id="eventname"
-          name="eventname"
+          id="event_name"
+          name="event_name"
           value={formValues.event_name}
           onChange={handleInputChange}
         />
 
-        <label htmlFor="date">Date</label>
+        <label htmlFor="event_date">Date</label>
         <input
           type="date"
-          id="date"
-          name="date"
+          id="event_date"
+          name="event_date"
           value={formValues.event_date}
           onChange={handleInputChange}
         />
 
-        <label htmlFor="location">Location</label>
+        <label htmlFor="event_location">Location</label>
         <input
           type="text"
-          id="location"
-          name="location"
+          id="event_location"
+          name="event_location"
           value={formValues.event_location}
           onChange={handleInputChange}
         />

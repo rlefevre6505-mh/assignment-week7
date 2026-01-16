@@ -38,7 +38,7 @@ app.get("/going", async (req, res) => {
     const query = await db.query(`SELECT going.*, events.* 
       FROM going JOIN events 
       ON events.id = going.event_id
-      `);
+      `); // is this right? how will i pull data form all 3 tabes here?
     res.json(query.rows);
     res.status(200).json({ request: "success" });
   } catch {
