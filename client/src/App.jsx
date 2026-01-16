@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Form from "./components/Form";
-import Posts from "./components/Posts";
+import Posts from "./components/Posts ";
 
 function App() {
   // use a good amount of components to build the app! use props as needed
