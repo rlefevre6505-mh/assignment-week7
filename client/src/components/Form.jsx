@@ -16,9 +16,9 @@ export default function Form() {
     fetch("https://assignment-week7-server-7mub.onrender.com/new-post", {
       method: "POST",
       headers: {
-        eventName: "",
-        eventDate: "",
-        eventLocation: "",
+        event_name: "",
+        event_date: "",
+        event_location: "",
       },
       body: JSON.stringify({ formValues }),
     });
