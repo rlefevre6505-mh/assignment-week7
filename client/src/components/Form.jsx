@@ -3,9 +3,9 @@ import { useState } from "react";
 export default function Form() {
   //we set useSate as an object to act as an empty template for the form values
   const [formValues, setFormValues] = useState({
-    event_name: "",
-    event_date: "",
-    event_location: "",
+    eventName: "",
+    eventDate: "",
+    eventLocation: "",
   });
 
   function handleSubmit(e) {
@@ -16,14 +16,12 @@ export default function Form() {
     fetch("https://assignment-week7-server-7mub.onrender.com", {
       method: "POST",
       headers: {
-        event_name: "",
-        event_date: "",
-        event_location: "",
+        eventName: "",
+        eventDate: "",
+        eventLocation: "",
       },
       body: JSON.stringify({ formValues }),
     });
-    const form = document.getElementById("review-form");
-    form.reset();
   }
 
   function handleInputChange(e) {
@@ -43,7 +41,7 @@ export default function Form() {
           onChange={handleInputChange}
         />
 
-        <label htmlFor="lastname">Last Name</label>
+        <label htmlFor="date">Date</label>
         <input
           type="date"
           id="date"
@@ -52,7 +50,7 @@ export default function Form() {
           onChange={handleInputChange}
         />
 
-        <label htmlFor="age">Age</label>
+        <label htmlFor="location">Location</label>
         <input
           type="text"
           id="location"
