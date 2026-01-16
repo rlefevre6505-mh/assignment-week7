@@ -6,16 +6,14 @@ import Home from "./components/Home";
 import Form from "./components/Form";
 import Posts from "./components/Posts";
 
-//TODO: set up routing system and import components
-// remember to have a component for your root route too ("/"")
-
 function App() {
+  // use a good amount of components to build the app! use props as needed
+  //though not required, users may want some conditional rendering to make the UI clean and uncluttered
+
   return (
-    // use a good amount of components to build the app! use props as needed
-    //though not required, users may want some conditional rendering to make the UI clean and uncluttered
     <>
-      <Header />;<h1>main page</h1>
-      {/* routing system goes here */}
+      <Header />
+      <h1>main page</h1>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/posts" element={<Posts />}></Route>
