@@ -28,7 +28,7 @@ app.get("/posts", async (req, res) => {
   } catch {
     console.error(`response failed - ${error}`);
   }
-});
+}); //maybe not needed
 
 // GET route for users going to event
 app.get("/going", async (req, res) => {

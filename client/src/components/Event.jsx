@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import Attendees from "./Attendees";
 
-export default function Posts() {
+export default function Event() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -18,19 +17,15 @@ export default function Posts() {
 
   return (
     <div>
-      <h3>Gigs</h3>
-      <div>
-        {posts.map((post) => {
-          return (
-            <div>
-              <p>{post.event_name}</p>
-              <p>{post.event_date}</p>
-              <p>{post.event_location}</p>
-            </div>
-          );
-        })}
-      </div>
-      <Attendees />
+      {posts.map((post, i) => {
+        return (
+          <div id={i}>
+            <p>{post.event_name}</p>
+            <p>{post.event_date}</p>
+            <p>{post.event_location}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
