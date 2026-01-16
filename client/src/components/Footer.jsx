@@ -6,7 +6,7 @@ export default function Footer() {
       <footer>
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/posts">See gigs</Link>
+          <Link to="/event">See gigs</Link>
           <Link to="/form">Submit new gig</Link>
         </nav>
       </footer>
