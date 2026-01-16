@@ -1,5 +1,5 @@
 //TODO: render data loaded from db
-export default function Home() {
+export default function Posts() {
   return (
     <div>
       <h3>Gigs</h3>
