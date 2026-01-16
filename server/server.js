@@ -1,6 +1,3 @@
-//TODO: set up server API
-//remember to store DATABASE_URL in .env!
-
 import express from "express";
 import cors from "cors";
 import { db } from "./dbconnections.js";
@@ -20,32 +17,34 @@ app.get("/", (req, res) => {
 });
 
 //TODO: set up routing system with at least 1 GET route and 1 POST route
+// // GET route for events
+// app.get("/posts", async (req, res) => {
+//   try {
+//     const query = await db.query(
+//       `SELECT event_name, event_date, event_location FROM posts`
+//     );
+//     res.json(query.rows);
+//     res.status(200).json({ request: "success" });
+//   } catch {
+//     console.error(`response failed - ${error}`);
+//   }
+// });
 
-app.get("/posts", async (req, res) => {
-  try {
-    const query = await db.query(
-      `SELECT event_name, event_date, event_location FROM posts`
-    );
-    res.json(query.rows);
-    res.status(200).json({ request: "success" });
-  } catch {
-    console.error(`response failed - ${error}`);
-  }
-});
+// // GET route for users going to event
+// app.get("/going", async (req, res) => {
+//   try {
+//     const query = await db.query(`SELECT going.*, events.*
+//       FROM going JOIN events
+//       ON events.id = going.event_id
+//       `); // is this right???????????? how will i pull data form all 3 tabes here?????????????????
+//     res.json(query.rows);
+//     res.status(200).json({ request: "success" });
+//   } catch {
+//     console.error(`response failed - ${error}`);
+//   }
+// });
 
-app.get("/going", async (req, res) => {
-  try {
-    const query = await db.query(`SELECT going.*, events.* 
-      FROM going JOIN events 
-      ON events.id = going.event_id
-      `); // is this right? how will i pull data form all 3 tabes here?
-    res.json(query.rows);
-    res.status(200).json({ request: "success" });
-  } catch {
-    console.error(`response failed - ${error}`);
-  }
-});
-
+// POST route for new events
 app.post("/new-post", (req, res) => {
   try {
     const data = req.body;
