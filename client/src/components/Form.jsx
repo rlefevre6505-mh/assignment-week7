@@ -13,7 +13,7 @@ export default function Form() {
     console.log("The form values are: ", formValues);
     // add functionality here to send data to a server, fetch the post route and declare the headers (body, where the body value is your state)
 
-    fetch("https://assignment-week7-server-7mub.onrender.com", {
+    fetch("https://assignment-week7-server-7mub.onrender.com/new-post", {
       method: "POST",
       headers: {
         eventName: "",

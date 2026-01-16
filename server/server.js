@@ -53,7 +53,7 @@ app.post("/new-post", (req, res) => {
       `INSERT INTO events (event_name, event_date, event_location) VALUES ($1, $2, $3) RETURNING *`,
       [data.eventName, data.eventDate, data.eventLocation]
     );
-    res.status(200).json({ request: "success" });
+    res.status(200).json({ request: "success!" });
   } catch (error) {
     console.error(`Error: ${error}`);
   }
