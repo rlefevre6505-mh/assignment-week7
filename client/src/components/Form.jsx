@@ -3,9 +3,9 @@ import { useState } from "react";
 export default function Form() {
   //we set useSate as an object to act as an empty template for the form values
   const [formValues, setFormValues] = useState({
-    eventName: "",
-    eventDate: "",
-    eventLocation: "",
+    event_name: "",
+    event_date: "",
+    event_location: "",
   });
 
   function handleSubmit(e) {

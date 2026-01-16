@@ -51,7 +51,7 @@ app.post("/new-post", (req, res) => {
     const data = req.body;
     const query = db.query(
       `INSERT INTO events (event_name, event_date, event_location) VALUES ($1, $2, $3) RETURNING *`,
-      [data.eventName, data.eventDate, data.eventLocation]
+      [data.event_name, data.event_date, data.event_location]
     );
     res.status(200).json({ request: "success!" });
   } catch (error) {
