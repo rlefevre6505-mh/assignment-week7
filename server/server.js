@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 app.get("/posts", async (req, res) => {
   try {
     const query = await db.query(
-      `SELECT event_name, event_date, event_location FROM posts`
+      `SELECT event_name, event_date, event_location FROM events`
     );
     res.json(query.rows);
     res.status(200).json({ request: "success" });
