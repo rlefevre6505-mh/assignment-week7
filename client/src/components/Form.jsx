@@ -27,7 +27,7 @@ export default function Form() {
   }
 
   return (
-    <>
+    <div className="form-div">
       <h3>Post a gig</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="event_name">Band/event name</label>
@@ -59,6 +59,6 @@ export default function Form() {
 
         <button type="submit">Submit</button>
       </form>
-    </>
+    </div>
   );
 }
