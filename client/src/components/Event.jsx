@@ -1,9 +1,4 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Link, Outlet } from "react-router";
-import Attendees from "./Attendees";
-
-// const AttendeesContext = createContext();
-// useContext, createContext,
 
 export default function Event() {
   const [posts, setPosts] = useState([]);
@@ -16,7 +11,6 @@ export default function Event() {
       );
       const data = await response.json();
       setPosts(data);
-      // console.log(`posts data: ${data}`);
     }
     fetchData();
   }, []);
@@ -33,38 +27,40 @@ export default function Event() {
   }, []);
 
   return (
-    <div>
-      <div>
-        {posts.map((post, i) => {
-          return (
-            <div key={`event_key${i}`}>
+    <>
+      {posts.map((post, i) => {
+        const yearString = post.event_date.toString().slice(0, 4);
+        const monthString = post.event_date.toString().slice(5, 7);
+        const dayString = post.event_date.toString().slice(8, 10);
+        const dateString = `${dayString} - ${monthString} - ${yearString}`;
+        console.log(dayString, monthString, yearString);
+        return (
+          <>
+            <h3>Gigs</h3>
+            <div className="event-container" key={`event_key${i}`}>
               <p>{post.event_name}</p>
-              <p>{post.event_date}</p>
+              <p>{dateString}</p>
               <p>{post.event_location}</p>
-              {/* <Routes>
-                <Route path={`/event/:${i}`} element={<Attendees />} />
-              </Routes>
-              <Link to={`/event/:${i}`}>See who's going</Link>
-              <Outlet /> */}
-
               <div>
                 <p>Who's going?</p>
-                {attendees.map((attendee) => {
-                  // console.log(attendee.event_id);
-                  // console.log(posts[i].id);
-                  if (attendee.event_id == post.id) {
-                    return (
-                      <Attendees key={`attendee${attendee.id}`}>
-                        <p>{attendee.person}</p>
-                      </Attendees>
-                    );
-                  }
-                })}
+                <div className="attendees-container">
+                  {attendees.map((attendee, index) => {
+                    if (attendee.event_id == post.id) {
+                      return (
+                        <p key={`${attendee.id}goingto${index}`}>
+                          {attendee.person}
+                        </p>
+                      );
+                    } else {
+                      return null;
+                    }
+                  })}
+                </div>
               </div>
             </div>
-          );
-        })}
-      </div>
-    </div>
+          </>
+        );
+      })}
+    </>
   );
 }

@@ -1,10 +1,89 @@
 #root {
+  box-sizing: border-box;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   padding: 2rem;
   text-align: center;
+  background-color: rgb(40, 40, 40);
+  color: rgb(252, 252, 252);
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
-div {
-  border: solid 1px darkslategray;
+header {
+  border: solid 2px orange;
+  height: 8rem;
+  width: 99vw;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4rem;
+  align-self: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(40, 40, 40);
 }
+
+h1 {
+  font-size: 3.6rem;
+  color: rgb(175, 0, 190);
+}
+
+h2 {
+  color: rgba(255, 255, 26, 0.9);
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: oblique;
+}
+
+h3 {
+  color: rgba(255, 255, 26, 0.9);
+}
+
+.posts-container {
+  display: flex;
+}
+
+.event-container {
+  border: solid 1px darkslategray;
+  margin: 10px 0 10px 0;
+}
+
+.attendees-container {
+  border: 2px solid pink;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  justify-content: center;
+}
+
+footer {
+  border: solid 2px orange;
+  height: 10vh;
+  width: 99vw;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(40, 40, 40);
+  nav {
+    min-width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    a {
+      flex-grow: 1;
+      color: orange;
+    }
+  }
+}
+
+/* @media (width > 600px) {
+  .posts-container {
+    display: flex;
+    flex-direction: row;
+  }
+} */

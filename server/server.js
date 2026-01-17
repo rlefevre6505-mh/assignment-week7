@@ -28,12 +28,11 @@ app.get("/posts", async (req, res) => {
   } catch {
     console.error(`response failed - ${error}`);
   }
-}); //maybe not needed
+});
 
 // GET route for users going to event
 app.get("/going", async (req, res) => {
   try {
-    // refactor to pull event id from url
     const query = await db.query(`SELECT id, person, event_id
       FROM going`);
 
