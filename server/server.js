@@ -35,9 +35,12 @@ app.get("/going", async (req, res) => {
   try {
     // refactor to pull event id from url
     const query = await db.query(`SELECT person, event_id
-      FROM going JOIN events
-      ON events.id = going.event_id
+      FROM going 
       `);
+
+    // JOIN events
+    // ON events.id = going.event_id
+
     res.json(query.rows);
     res.status(200).json({ request: "success" });
   } catch {
