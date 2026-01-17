@@ -34,9 +34,8 @@ app.get("/posts", async (req, res) => {
 app.get("/going", async (req, res) => {
   try {
     // refactor to pull event id from url
-    const query = await db.query(`SELECT person, event_id
-      FROM going 
-      `);
+    const query = await db.query(`SELECT id, person, event_id
+      FROM going`);
 
     // JOIN events
     // ON events.id = going.event_id

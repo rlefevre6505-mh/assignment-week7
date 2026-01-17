@@ -49,16 +49,16 @@ export default function Event() {
 
               <div>
                 <p>Who's going?</p>
-                {attendees.map((attendee, i) => {
-                  console.log(attendee.event_id);
-                  return (
-                    attendee.event_id == posts[i].id ? (
-                      <Attendees key={`attendee${i}`}>
+                {attendees.map((attendee) => {
+                  // console.log(attendee.event_id);
+                  // console.log(posts[i].id);
+                  if (attendee.event_id == post.id) {
+                    return (
+                      <Attendees key={`attendee${attendee.id}`}>
                         <p>{attendee.person}</p>
                       </Attendees>
-                    ) : null,
-                    console.log("null")
-                  );
+                    );
+                  }
                 })}
               </div>
             </div>
