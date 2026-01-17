@@ -36,6 +36,10 @@ h2 {
   font-style: oblique;
 }
 
+.routes {
+  margin-top: 8rem;
+}
+
 h3 {
   color: rgba(255, 255, 26, 0.9);
 }

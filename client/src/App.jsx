@@ -14,7 +14,7 @@ function App() {
     <>
       <Header />
 
-      <Routes>
+      <Routes className="routes">
         <Route path="/" element={<Home />} />
         <Route path="/event" element={<Event />} />
         <Route path="/form" element={<Form />} />
