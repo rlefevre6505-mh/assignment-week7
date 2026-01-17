@@ -12,7 +12,7 @@ export default function Event() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://assignment-week7-server-i34z.onrender.com/going"
+        "https://assignment-week7-server-i34z.onrender.com/posts",
       );
       const data = await response.json();
       setPosts(data);
@@ -24,7 +24,7 @@ export default function Event() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://assignment-week7-server-i34z.onrender.com/going"
+        "https://assignment-week7-server-i34z.onrender.com/going",
       );
       const data = await response.json();
       setAttendees(data);
@@ -46,21 +46,21 @@ export default function Event() {
               </Routes>
               <Link to={`/event/:${i}`}>See who's going</Link>
               <Outlet /> */}
-              <div>
-                <p>Who's going?</p>
-                {attendees.map((attendee, i) => {
-                  console.log(attendee.event_id);
-                  return (
-                    attendee.event_id === post.event_id ? (
-                      <Attendees key={`attendee${i}`}>
-                        <p>{attendee.person}</p>
-                      </Attendees>
-                    ) : null,
-                    console.log("null")
-                  );
-                })}
-              </div>
             </div>
+          );
+        })}
+      </div>
+      <div>
+        <p>Who's going?</p>
+        {attendees.map((attendee, i) => {
+          console.log(attendee.person);
+          return (
+            attendee.event_id == posts[i].id ? (
+              <Attendees key={`attendee${i}`}>
+                <p>{attendee.person}</p>
+              </Attendees>
+            ) : null,
+            console.log("null")
           );
         })}
       </div>

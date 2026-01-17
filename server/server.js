@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 app.get("/posts", async (req, res) => {
   try {
     const query = await db.query(
-      `SELECT event_name, event_date, event_location FROM events`
+      `SELECT id, event_name, event_date, event_location FROM events`,
     );
     res.json(query.rows);
     res.status(200).json({ request: "success" });
@@ -34,7 +34,7 @@ app.get("/posts", async (req, res) => {
 app.get("/going", async (req, res) => {
   try {
     // refactor to pull event id from url
-    const query = await db.query(`SELECT going, events
+    const query = await db.query(`SELECT person, event_id
       FROM going JOIN events
       ON events.id = going.event_id
       `);
@@ -51,7 +51,7 @@ app.post("/new-post", (req, res) => {
     const data = req.body;
     const query = db.query(
       `INSERT INTO events (event_name, event_date, event_location) VALUES ($1, $2, $3) RETURNING *`,
-      [data.event_name, data.event_date, data.event_location]
+      [data.event_name, data.event_date, data.event_location],
     );
     res.status(200).json({ request: "success!" });
   } catch (error) {
