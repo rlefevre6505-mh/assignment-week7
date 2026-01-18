@@ -46,6 +46,18 @@ app.get("/going", async (req, res) => {
   }
 });
 
+// GET route for filter options, no duplication (DISTINCT)
+app.get("/filter", async (req, res) => {
+  try {
+    const query = await db.query(`SELECT event_name
+      FROM events`);
+    res.json(query.rows);
+    res.status(200).json({ request: "success" });
+  } catch {
+    console.error(`response failed - ${error}`);
+  }
+});
+
 // POST route for new events
 app.post("/new-post", (req, res) => {
   try {

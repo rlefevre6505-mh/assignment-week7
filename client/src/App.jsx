@@ -16,7 +16,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/event" element={<Posts />} />
+        <Route path="/posts" element={<Posts />}>
+          <Route index element={<Posts />} />
+        </Route>
         <Route path="/form" element={<Form />} />
       </Routes>
       <Footer />
