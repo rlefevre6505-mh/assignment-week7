@@ -52,6 +52,7 @@ h3 {
   font-size: 2.4rem;
   color: rgba(255, 255, 26, 0.9);
   background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 8px;
 }
 
 /* HOME COMPONENT */
@@ -67,6 +68,11 @@ h3 {
 /* POSTS COMPONENT */
 .posts-container {
   display: flex;
+}
+
+select {
+  padding: 4px;
+  color: whitesmoke;
 }
 
 .event-container {

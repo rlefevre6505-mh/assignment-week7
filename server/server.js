@@ -71,3 +71,15 @@ app.post("/new-post", (req, res) => {
     console.error(`Error: ${error}`);
   }
 });
+
+// DELETE route
+app.delete("/delete-going", (req, res) => {
+  try {
+    const query = db.query(
+      `DELETE FROM going WHERE person = user AND event_id = 11`,
+    );
+    res.status(200).json({ request: "success!" });
+  } catch (error) {
+    console.error(`Error: ${error}`);
+  }
+});

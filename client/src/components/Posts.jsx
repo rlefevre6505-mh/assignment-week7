@@ -35,7 +35,7 @@ export default function Posts() {
   return (
     <div className="main-div">
       <h3>Gigs</h3>
-      <label htmlFor="filter">Filter events by name</label>
+      <label htmlFor="filter">Filter events by name: </label>
       <select name="filter">
         <option value="" disabled defaultValue>
           Select one
