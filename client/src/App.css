@@ -4,29 +4,36 @@
   margin: 0;
   padding: 2rem;
   text-align: center;
-  background-color: rgb(40, 40, 40);
+
   color: rgb(252, 252, 252);
   font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
 }
 
+* {
+  margin: 0;
+  background-color: rgb(40, 40, 40);
+}
+
 header {
-  border: solid 2px orange;
-  height: 8rem;
-  width: 99vw;
+  /* border: solid 2px orange; */
+  height: 6rem;
+  width: 100vw;
   display: flex;
-  align-items: baseline;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
   gap: 4rem;
   align-self: center;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgb(40, 40, 40);
+  /* background-color: rgb(40, 40, 40); */
+  background: linear-gradient(rgb(40, 40, 40) 80%, rgb(119, 119, 119));
 }
 
 h1 {
   font-size: 3.6rem;
   color: rgb(175, 0, 190);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 h2 {
@@ -34,37 +41,111 @@ h2 {
   font-size: 1.4rem;
   font-weight: 400;
   font-style: oblique;
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.form-div {
-  margin-top: 30vh;
+.main-div {
+  margin-top: 6rem;
 }
 
 h3 {
+  font-size: 2.4rem;
   color: rgba(255, 255, 26, 0.9);
+  background-color: rgba(0, 0, 0, 0);
 }
 
+/* HOME COMPONENT */
+.home-page {
+  p {
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    max-width: 24rem;
+  }
+}
+
+/* POSTS COMPONENT */
 .posts-container {
   display: flex;
 }
 
 .event-container {
-  border: solid 1px darkslategray;
+  border: solid 2px rgb(175, 0, 190);
+  padding: 16px 0 16px 0;
   margin: 10px 0 10px 0;
 }
 
 .attendees-container {
-  border: 2px solid pink;
+  font-size: 0.8rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-
   justify-content: center;
 }
 
+.event-name {
+  font-size: 1.6rem;
+}
+
+.event-details {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/* .event-date {
+}
+.event-location {
+} */
+
+.whos-going {
+  margin-top: 2rem;
+}
+
+h4 {
+  margin-bottom: 0.4rem;
+  color: rgb(175, 0, 190);
+}
+
+.attendee {
+  margin: 0.2rem;
+}
+
+/* FORM COMPONENT */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  label {
+    margin-top: 1.2rem;
+  }
+  input {
+    background-color: whitesmoke;
+    max-width: 20rem;
+  }
+  button {
+    margin-top: 2rem;
+    max-width: 12rem;
+    height: 2rem;
+    color: whitesmoke;
+    padding: 8px 24px 8px 24px;
+    border-radius: 8px;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  /* button:active {
+    vertical-align: top;
+    padding-top: 8px;
+  } */
+}
+
+/* FOOTER */
 footer {
-  border: solid 2px orange;
-  height: 10vh;
+  /* border: solid 2px orange; */
+  height: 8vh;
   width: 99vw;
   display: flex;
   justify-content: center;
@@ -72,22 +153,36 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: rgb(40, 40, 40);
+  background: linear-gradient(
+    rgb(119, 119, 119) 10%,
+    rgb(40, 40, 40) 40%,
+    rgb(40, 40, 40)
+  );
+  /* background-color: rgb(40, 40, 40); */
   nav {
     min-width: 90vw;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0);
     a {
       flex-grow: 1;
-      color: orange;
+      color: rgba(255, 255, 26, 0.9);
+      background-color: rgba(0, 0, 0, 0);
     }
   }
 }
 
-/* @media (width > 600px) {
-  .posts-container {
-    display: flex;
-    flex-direction: row;
+@media (width < 500px) {
+  header {
+    gap: 0.8rem;
+
+    h1 {
+      font-size: 2.8rem;
+      margin-left: 8px;
+    }
+    h2 {
+      margin-right: 8px;
+    }
   }
-} */
+}

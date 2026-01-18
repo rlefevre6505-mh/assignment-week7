@@ -20,6 +20,11 @@ export default function Form() {
       },
       body: JSON.stringify(formValues),
     });
+    setFormValues({
+      event_name: "",
+      event_date: "",
+      event_location: "",
+    });
   }
 
   function handleInputChange(e) {
@@ -27,32 +32,35 @@ export default function Form() {
   }
 
   return (
-    <div className="form-div">
+    <div className="form-div main-div">
       <h3>Post a gig</h3>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="event_name">Band/event name</label>
+      <form id="form" onSubmit={handleSubmit}>
+        <label htmlFor="event_name">Band/event name:</label>
         <input
           type="text"
           id="event_name"
           name="event_name"
+          required
           value={formValues.event_name}
           onChange={handleInputChange}
         />
 
-        <label htmlFor="event_date">Date</label>
+        <label htmlFor="event_date">Date:</label>
         <input
           type="date"
           id="event_date"
           name="event_date"
+          required
           value={formValues.event_date}
           onChange={handleInputChange}
         />
 
-        <label htmlFor="event_location">Location</label>
+        <label htmlFor="event_location">Location:</label>
         <input
           type="text"
           id="event_location"
           name="event_location"
+          required
           value={formValues.event_location}
           onChange={handleInputChange}
         />

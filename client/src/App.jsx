@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Form from "./components/Form";
 import Event from "./components/Event";
+import Posts from "./components/Posts";
 
 function App() {
   // use a good amount of components to build the app! use props as needed
@@ -13,10 +14,9 @@ function App() {
   return (
     <>
       <Header />
-
-      <Routes className="routes">
+      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/event" element={<Event />} />
+        <Route path="/event" element={<Posts />} />
         <Route path="/form" element={<Form />} />
       </Routes>
       <Footer />

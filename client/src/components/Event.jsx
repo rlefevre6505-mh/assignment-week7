@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 export default function Event() {
   const [posts, setPosts] = useState([]);
   const [attendees, setAttendees] = useState([]);
+  const [count, setCount] = useState(0);
 
+  // fethc requests
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
@@ -13,7 +15,8 @@ export default function Event() {
       setPosts(data);
     }
     fetchData();
-  }, []);
+    console.log("fetched events");
+  }, [count]);
 
   useEffect(() => {
     async function fetchData() {
@@ -24,7 +27,21 @@ export default function Event() {
       setAttendees(data);
     }
     fetchData();
-  }, []);
+    console.log("fetched attendees");
+  }, [count]);
+
+  //database polling
+  useEffect(() => {
+    console.log("useTimer hook useEffect callback");
+    const interval = setInterval(() => {
+      setCount((currentCount) => currentCount + 1);
+      console.log(count);
+    }, 5000);
+    return () => {
+      console.log("useTimer hook useEffect cleanup");
+      clearInterval(interval);
+    };
+  });
 
   return (
     <>
@@ -33,21 +50,24 @@ export default function Event() {
         const monthString = post.event_date.toString().slice(5, 7);
         const dayString = post.event_date.toString().slice(8, 10);
         const dateString = `${dayString} - ${monthString} - ${yearString}`;
-        console.log(dayString, monthString, yearString);
         return (
           <>
-            <h3>Gigs</h3>
             <div className="event-container" key={`event_key${i}`}>
-              <p>{post.event_name}</p>
-              <p>{dateString}</p>
-              <p>{post.event_location}</p>
-              <div>
-                <p>Who's going?</p>
+              <p className="event-name">{post.event_name}</p>
+              <div className="event-details">
+                <p className="event-date">{dateString}</p>
+                <p className="event-location">{post.event_location}</p>
+              </div>
+              <div className="whos-going">
+                <h4>Who's going?</h4>
                 <div className="attendees-container">
                   {attendees.map((attendee, index) => {
                     if (attendee.event_id == post.id) {
                       return (
-                        <p key={`${attendee.id}goingto${index}`}>
+                        <p
+                          className="attendee"
+                          key={`${attendee.id}goingto${index}`}
+                        >
                           {attendee.person}
                         </p>
                       );
