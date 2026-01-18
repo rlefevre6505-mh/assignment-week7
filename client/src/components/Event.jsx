@@ -5,7 +5,7 @@ export default function Event() {
   const [attendees, setAttendees] = useState([]);
   const [count, setCount] = useState(0);
 
-  // fethc requests
+  // fetch requests
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
