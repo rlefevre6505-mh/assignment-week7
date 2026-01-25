@@ -44,7 +44,6 @@ export default function Form() {
           value={formValues.event_name}
           onChange={handleInputChange}
         />
-
         <label htmlFor="event_date">Date:</label>
         <input
           type="date"
@@ -54,7 +53,6 @@ export default function Form() {
           value={formValues.event_date}
           onChange={handleInputChange}
         />
-
         <label htmlFor="event_location">Location:</label>
         <input
           type="text"
@@ -64,7 +62,6 @@ export default function Form() {
           value={formValues.event_location}
           onChange={handleInputChange}
         />
-
         <button type="submit">Submit</button>
       </form>
     </div>
